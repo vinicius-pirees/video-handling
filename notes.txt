@@ -1,0 +1,19 @@
+
+# Zookeeper
+./zkServer.sh start
+./zkServer.sh stop
+
+netstat -ant | grep :2181
+
+
+# Kafka
+./bin/kafka-server-start.sh config/server.properties
+
+
+# Use venv in Jupyter notebook
+source projectname/bin/activate
+pip install ipykernel
+ipython kernel install --user --name=projectname
+
+jupyter kernelspec list # list kernels
+jupyter kernelspec uninstall unwanted-kernel # Delete ipython kernel
