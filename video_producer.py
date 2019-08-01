@@ -5,6 +5,7 @@ from kafka import KafkaProducer
 import argparse
 import uuid
 import json
+import pickle
 
 topic = "distributed-video1"
 
@@ -51,7 +52,7 @@ def publish_video(video_file):
         }
 
         # Convert to bytes and send to kafka
-        producer.send(topic, json.dumps(obj))
+        producer.send(topic, pickle.dumps(obj))
 
         time.sleep(0.2)
     video.release()
@@ -79,7 +80,7 @@ def publish_camera():
                 'frame': buffer.tobytes()
             }
 
-            producer.send(topic, json.dumps(obj))
+            producer.send(topic, pickle.dumps(obj))
 
             # Choppier stream, reduced load on processor
             time.sleep(0.2)

@@ -8,6 +8,7 @@ netstat -ant | grep :2181
 
 # Kafka
 ./bin/kafka-server-start.sh config/server.properties
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
 
 
 # Use venv in Jupyter notebook
@@ -17,3 +18,12 @@ ipython kernel install --user --name=projectname
 
 jupyter kernelspec list # list kernels
 jupyter kernelspec uninstall unwanted-kernel # Delete ipython kernel
+
+
+
+python video_producer.py --video bike_ireland.mp4
+python video_producer.py
+
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic distributed-video1 --from-beginning --max-messages 10
+
