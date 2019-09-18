@@ -9,3 +9,4 @@ venv.bak/
 .idea/
 *.mp4
 .ipynb_checkpoints/
+yolov3.weights
