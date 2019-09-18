@@ -27,3 +27,9 @@ python video_producer.py
 
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic distributed-video1 --from-beginning --max-messages 10
 
+
+
+
+### Download Yolo Net
+
+
